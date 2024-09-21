@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "wb-llm-judge-09202024"
+version = "0.1.0"
+description = ""
+authors = ["Faris <frs@hbb.dev>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^1.47.0"
+transformers = "^4.44.2"
+torch = "^2.4.1"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
