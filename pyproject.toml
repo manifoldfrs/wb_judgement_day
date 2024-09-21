@@ -13,6 +13,8 @@ transformers = "^4.44.2"
 torch = "^2.4.1"
 python-dotenv = "^1.0.1"
 black = "^24.8.0"
+sentencepiece = "^0.2.0"
+huggingface-hub = "^0.25.0"
 
 
 [build-system]

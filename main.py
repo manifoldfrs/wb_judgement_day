@@ -1,11 +1,21 @@
 import os
 from openai import OpenAI
-from transformers import pipeline
+from huggingface_hub import login
+from transformers import AutoTokenizer, AutoModelForCausalLM
 from dotenv import load_dotenv
 
 load_dotenv()
 
 openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+login(token=os.getenv("HUGGINGFACE_TOKEN"))
+
+
+MODELS = [
+    "mistralai/Mistral-Small-Instruct-2409",
+    "meta-llama/Llama-Guard-3-8B",
+    "openai/gpt-4o",
+]
 
 question = "What is the capital of France?"
 candidate_response = "The capital of France is Berlin."
@@ -14,59 +24,66 @@ reference_answer = "The capital of France is Paris."
 
 def generate_prompt(question, candidate_response, reference_answer):
     return f"""
-    You are an impartial judge. Here is the information:
     Question: {question}
     Candidate Response: {candidate_response}
     Reference Answer: {reference_answer}
 
-    Your task is to evaluate whether the candidate's response is correct.
-    If the answer is correct, respond with 'True'. If it is incorrect, respond with 'False'.
-    Also, provide a brief explanation for your decision.
+    Evaluate whether the candidate's response is correct.
+    If correct, respond with 'True'.
+    If incorrect, respond with 'False'.
+    Provide a brief explanation.
     """
 
 
-def get_llm_verdict(question, candidate_response, reference_answer):
+def get_llm_verdict(question, candidate_response, reference_answer, model_name):
     prompt = generate_prompt(question, candidate_response, reference_answer)
 
-    response = openai.chat.completions.create(
-        model="gpt-4o",  # or any other available model
-        messages=[
-            {"role": "system", "content": "You are an impartial judge."},
-            {"role": "user", "content": prompt},
-        ],
-        max_tokens=150,
-    )
+    if model_name.startswith("openai/"):
+        # Use OpenAI's GPT-4 via API
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=150,
+            temperature=0,
+        )
+        generated_text = response["choices"][0]["message"]["content"].strip()
+    else:
+        # Use Hugging Face model
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        model = AutoModelForCausalLM.from_pretrained(model_name)
+        input_ids = tokenizer.encode(prompt, return_tensors="pt")
+        output_ids = model.generate(input_ids, max_new_tokens=150)
+        generated_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
-    return response.choices[0].message.content.strip()
-
-
-# Example Usage
-verdict = get_llm_verdict(question, candidate_response, reference_answer)
-print(f"LLM Judge Verdict: {verdict}")
+    return generated_text
 
 
 def get_combined_verdict(question, candidate_response, reference_answer):
-    # Assume you have multiple instances or variations of the LLM
+    """
+    Using majority vote for the final verdict
+    """
     verdicts = []
 
-    for _ in range(3):  # Simulating 3 judges
-        verdict = get_llm_verdict(question, candidate_response, reference_answer)
+    for model_name in MODELS:
+        verdict = get_llm_verdict(
+            question, candidate_response, reference_answer, model_name
+        )
         verdicts.append(verdict)
 
-    # Majority vote for the final verdict
-    true_count = verdicts.count("True")
-    false_count = verdicts.count("False")
+    true_count = sum("True" in v for v in verdicts)
+    false_count = sum("False" in v for v in verdicts)
 
     final_verdict = "True" if true_count > false_count else "False"
     return final_verdict, verdicts
 
 
-# Get combined verdict from multiple judges
+# Get combined verdict from multiple models
 final_verdict, individual_verdicts = get_combined_verdict(
     question, candidate_response, reference_answer
 )
 print(f"Final Verdict: {final_verdict}")
-print(f"Individual Verdicts: {individual_verdicts}")
+for idx, verdict in enumerate(individual_verdicts, 1):
+    print(f"Model {idx} Verdict: {verdict}")
 
 
 def get_combined_verdict_with_explanations(
@@ -74,18 +91,11 @@ def get_combined_verdict_with_explanations(
 ):
     verdicts_and_explanations = []
 
-    for _ in range(3):  # Simulating 3 judges
-        prompt = generate_prompt(question, candidate_response, reference_answer)
-        response = openai.chat.completions.create(
-            model="gpt-4o",  # or any other available model
-            messages=[
-                {"role": "system", "content": "You are an impartial judge."},
-                {"role": "user", "content": prompt},
-            ],
-            max_tokens=150,
+    for model_name in MODELS:
+        verdict = get_llm_verdict(
+            question, candidate_response, reference_answer, model_name
         )
-        verdict_and_explanation = response.choices[0].message.content.strip()
-        verdicts_and_explanations.append(verdict_and_explanation)
+        verdicts_and_explanations.append(verdict)
 
     # Extract verdicts and count majority
     true_count = sum("True" in ve for ve in verdicts_and_explanations)
