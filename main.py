@@ -1,8 +1,12 @@
 import os
-from openai import OpenAI
-from dotenv import load_dotenv
 from typing import Dict
+
 import weave
+from datasets import load_dataset
+from dotenv import load_dotenv
+from openai import OpenAI
+
+ds = load_dataset("mandarjoshi/trivia_qa", "rc")
 
 
 load_dotenv()
