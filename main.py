@@ -1,6 +1,7 @@
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+from typing import Dict
 import weave
 
 
@@ -70,29 +71,20 @@ def get_combined_verdict(question, candidate_response, reference_answer):
     return final_verdict, verdicts
 
 
-# Get combined verdict from multiple models
-final_verdict, individual_verdicts = get_combined_verdict(
-    question, candidate_response, reference_answer
-)
-print(f"Final Verdict: {final_verdict}")
-for idx, verdict in enumerate(individual_verdicts, 1):
-    print(f"Model {idx} Verdict: {verdict}")
-
-
 def get_combined_verdict_with_explanations(
     question, candidate_response, reference_answer
 ):
-    verdicts_and_explanations = []
+    verdicts_and_explanations: Dict[str, str] = {}
 
     for model_name in MODELS:
         verdict = get_llm_verdict(
             question, candidate_response, reference_answer, model_name
         )
-        verdicts_and_explanations.append(verdict)
+        verdicts_and_explanations.update({model_name: verdict})
 
     # Extract verdicts and count majority
-    true_count = sum("True" in ve for ve in verdicts_and_explanations)
-    false_count = sum("False" in ve for ve in verdicts_and_explanations)
+    true_count = sum("True" in ve for ve in verdicts_and_explanations.values())
+    false_count = sum("False" in ve for ve in verdicts_and_explanations.values())
 
     final_verdict = "True" if true_count > false_count else "False"
     return final_verdict, verdicts_and_explanations
@@ -102,6 +94,6 @@ def get_combined_verdict_with_explanations(
 final_verdict, verdicts_and_explanations = get_combined_verdict_with_explanations(
     question, candidate_response, reference_answer
 )
+for model, verdict in verdicts_and_explanations.items():
+    print(f"Judge: {model}\nVerdict and Explanation: {verdict}\n")
 print(f"Final Verdict: {final_verdict}")
-for idx, ve in enumerate(verdicts_and_explanations, 1):
-    print(f"Judge {idx} Verdict and Explanation: {ve}")
