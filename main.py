@@ -1,20 +1,25 @@
 import os
 from openai import OpenAI
 from huggingface_hub import login
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from dotenv import load_dotenv
+import weave
+
 
 load_dotenv()
 
-openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+weave.init("together-weave")
+
+openai = OpenAI(
+    base_url="https://openrouter.ai/api/v1", api_key=os.getenv("OPENROUTER_API_KEY")
+)
 
 login(token=os.getenv("HUGGINGFACE_TOKEN"))
 
 
 MODELS = [
-    "mistralai/Mistral-Small-Instruct-2409",
-    "meta-llama/Llama-Guard-3-8B",
-    "openai/gpt-4o",
+    "mistralai/mistral-7b-instruct:free",
+    "meta-llama/llama-3.1-8b-instruct",
+    "openai/chatgpt-4o-latest",
 ]
 
 question = "What is the capital of France?"
@@ -38,22 +43,13 @@ def generate_prompt(question, candidate_response, reference_answer):
 def get_llm_verdict(question, candidate_response, reference_answer, model_name):
     prompt = generate_prompt(question, candidate_response, reference_answer)
 
-    if model_name.startswith("openai/"):
-        # Use OpenAI's GPT-4 via API
-        response = openai.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=150,
-            temperature=0,
-        )
-        generated_text = response["choices"][0]["message"]["content"].strip()
-    else:
-        # Use Hugging Face model
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
-        model = AutoModelForCausalLM.from_pretrained(model_name)
-        input_ids = tokenizer.encode(prompt, return_tensors="pt")
-        output_ids = model.generate(input_ids, max_new_tokens=150)
-        generated_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    response = openai.chat.completions.create(
+        model=model_name,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=150,
+        temperature=0.1,
+    )
+    generated_text = response.choices[0].message.content.strip()
 
     return generated_text
 
