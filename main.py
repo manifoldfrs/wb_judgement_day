@@ -1,6 +1,5 @@
 import os
 from openai import OpenAI
-from huggingface_hub import login
 from dotenv import load_dotenv
 import weave
 
@@ -12,8 +11,6 @@ weave.init("together-weave")
 openai = OpenAI(
     base_url="https://openrouter.ai/api/v1", api_key=os.getenv("OPENROUTER_API_KEY")
 )
-
-login(token=os.getenv("HUGGINGFACE_TOKEN"))
 
 
 MODELS = [
@@ -47,7 +44,7 @@ def get_llm_verdict(question, candidate_response, reference_answer, model_name):
         model=model_name,
         messages=[{"role": "user", "content": prompt}],
         max_tokens=150,
-        temperature=0.1,
+        temperature=0.001,
     )
     generated_text = response.choices[0].message.content.strip()
 
