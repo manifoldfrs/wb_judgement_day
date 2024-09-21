@@ -3,3 +3,4 @@
    .venv/
    .vscode/
    .mypy_cache
+   data/.DS_Store
