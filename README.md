@@ -1,4 +1,4 @@
-# LLM as a Judge Hackathon
+# LLM Idol
 
 ## Description
 
