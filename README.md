@@ -4,7 +4,7 @@
 
 Impelementing this [paper](https://www.arxiv.org/abs/2408.09235#:~:text=17%20Aug%202024%5D-,Reference%2DGuided%20Verdict%3A%20LLMs%2Das%2DJudges%20in%20Automatic,Evaluation%20of%20Free%2DForm%20Text&text=The%20rapid%20advancements%20in%20Large,particularly%20in%20free%2Dform%20tasks.)
 
-![Judgement Day](img/wb_hackathon.png)
+![Judgement Day](img/wb_judgement_day_hackathon.png)
 ## Installation
 
 To set up the project, follow these steps:
