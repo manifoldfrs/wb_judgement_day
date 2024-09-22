@@ -4,7 +4,6 @@ from typing import Dict
 import weave
 from dotenv import load_dotenv
 from openai import OpenAI
-
 from extract_data import load_hotpotqa, load_triviaqa, load_truthfulqa
 
 load_dotenv()
@@ -39,7 +38,7 @@ def get_candidate_response(question, model_name="mistralai/mistral-7b-instruct:f
         model=model_name,
         messages=[{"role": "user", "content": question}],
         max_tokens=150,
-        temperature=0.7,
+        temperature=0.001,
     )
     candidate_response = response.choices[0].message.content.strip()
     return candidate_response
