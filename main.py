@@ -1,30 +1,30 @@
+import asyncio
 import json
 import os
 from collections import defaultdict
 from typing import Dict, List
 
+import openai
 import statsmodels.stats.inter_rater as ir
 import weave
 from dotenv import load_dotenv
 from openai import OpenAI
 from sklearn.metrics import cohen_kappa_score
+from weave.flow.scorer import MultiTaskBinaryClassificationF1
 
 from extract_data import load_hotpotqa, load_triviaqa, load_truthfulqa
 
 load_dotenv()
-weave.init("together-weave")
+weave.init("llm-judge-evaluation")
 
 openai = OpenAI(
     base_url="https://openrouter.ai/api/v1", api_key=os.getenv("OPENROUTER_API_KEY")
 )
 
-MODELS = [
-    "mistralai/mistral-7b-instruct:free",
-    "meta-llama/llama-3.1-8b-instruct",
-    "openai/chatgpt-4o-latest",
-]
+hotpotqa_data = load_hotpotqa()
 
 
+# Define the prompt generation function
 def generate_prompt(question, candidate_response, reference_answer):
     return f"""
     Question: {question}
@@ -43,128 +43,125 @@ def generate_prompt(question, candidate_response, reference_answer):
     """
 
 
-@weave.op()
-def get_candidate_response(question, model_name="mistralai/mistral-7b-instruct:free"):
-    response = openai.chat.completions.create(
-        model=model_name,
-        messages=[{"role": "user", "content": question}],
-        max_tokens=150,
-        temperature=0.001,
-    )
-    candidate_response = response.choices[0].message.content.strip()
-    return candidate_response
+# Define the LLMJudgeModel class
+class LLMJudgeModel(weave.Model):
+    name: str
+    model_name: str
 
-
-@weave.op()
-def get_llm_verdict(question, candidate_response, reference_answer, model_name):
-    prompt = generate_prompt(question, candidate_response, reference_answer)
-    response = openai.chat.completions.create(
-        model=model_name,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=150,
-        temperature=0.001,
-    )
-    generated_text = response.choices[0].message.content.strip()
-    return generated_text
-
-
-def get_combined_verdict_with_explanations(
-    question, candidate_response, reference_answer
-):
-    """
-    LLMs-as-Judges Majority
-    """
-    verdicts_and_explanations: Dict[str, str] = {}
-    for model_name in MODELS:
-        verdict = get_llm_verdict(
-            question, candidate_response, reference_answer, model_name
+    @weave.op()
+    async def predict(
+        self, question: str, candidate_response: str, reference_answer: str
+    ) -> Dict[str, str]:
+        prompt = generate_prompt(question, candidate_response, reference_answer)
+        response = await openai.chat.completions.create(
+            model=self.model_name,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=150,
+            temperature=0.001,
         )
-        verdicts_and_explanations[model_name] = verdict
-
-    true_count = sum("True" in ve for ve in verdicts_and_explanations.values())
-    false_count = sum("False" in ve for ve in verdicts_and_explanations.values())
-
-    final_verdict = "True" if true_count > false_count else "False"
-    return final_verdict, verdicts_and_explanations
-
-
-# Load data from datasets
-hotpotqa_data = load_hotpotqa()
-triviaqa_data = load_triviaqa()
-truthfulqa_data = load_truthfulqa()
-
-# Lists to store results and verdicts
-results: List[Dict] = []
-verdicts_model1 = []
-verdicts_model2 = []
-verdicts_model3 = []
-
-
-# Helper function to filter ambiguous verdicts
-def filter_ambiguous(verdicts1, verdicts2):
-    return zip(
-        *[
-            (v1, v2)
-            for v1, v2 in zip(verdicts1, verdicts2)
-            if v1 != "Ambiguous" and v2 != "Ambiguous"
-        ]
-    )
-
-
-# Process each question-answer pair
-for pair in hotpotqa_data:
-    question = pair["question"]
-    reference_answer = pair["answer"]
-
-    # Generate candidate response
-    candidate_response = get_candidate_response(question)
-
-    # Get verdicts from models
-    final_verdict, verdicts_and_explanations = get_combined_verdict_with_explanations(
-        question, candidate_response, reference_answer
-    )
-
-    # Collect verdicts for each model
-    verdicts = {}
-    for model_name, verdict in verdicts_and_explanations.items():
-        if "True" in verdict:
-            verdicts[model_name] = "True"
-        elif "False" in verdict:
-            verdicts[model_name] = "False"
+        generated_text = response.choices[0].message.content.strip()
+        # Extract verdict and explanation from the generated text
+        if "True" in generated_text:
+            verdict = "True"
+        elif "False" in generated_text:
+            verdict = "False"
         else:
-            verdicts[model_name] = "Ambiguous"  # Handle ambiguous verdicts
-
-    verdicts_model1.append(verdicts[MODELS[0]])
-    verdicts_model2.append(verdicts[MODELS[1]])
-    verdicts_model3.append(verdicts[MODELS[2]])
-
-    # Prepare result
-    result = {
-        "question": question,
-        "candidate_response": candidate_response,
-        "reference_answer": reference_answer,
-        "verdicts": verdicts_and_explanations,
-        "final_verdict": final_verdict,
-    }
-
-    results.append(result)
+            verdict = "Ambiguous"
+        explanation = generated_text
+        return {"verdict": verdict, "explanation": explanation}
 
 
-def compute_kappa_statistics(verdicts_model1, verdicts_model2, verdicts_model3):
+# Define the CandidateModel class
+class CandidateModel(weave.Model):
+    name: str
+    model_name: str
+
+    @weave.op()
+    async def predict(self, question: str) -> str:
+        response = await openai.chat.completions.create(
+            model=self.model_name,
+            messages=[{"role": "user", "content": question}],
+            max_tokens=150,
+            temperature=0.001,
+        )
+        candidate_response = response.choices[0].message.content.strip()
+        return candidate_response
+
+
+candidate_model = CandidateModel(
+    name="candidate-model",
+    model_name="mistralai/mistral-7b-instruct:free",
+)
+
+judge_models = [
+    LLMJudgeModel(
+        name="judge-mistral", model_name="mistralai/mistral-7b-instruct:free"
+    ),
+    LLMJudgeModel(name="judge-llama", model_name="meta-llama/llama-3.1-8b-instruct"),
+    LLMJudgeModel(name="judge-openai", model_name="openai/chatgpt-4o-latest"),
+]
+
+
+@weave.op()
+def judge_score(target_verdict: str, judge_output: Dict[str, str]) -> Dict[str, bool]:
+    return {"correct": target_verdict == judge_output["verdict"]}
+
+
+scorers = [MultiTaskBinaryClassificationF1(class_names=["True", "False"]), judge_score]
+
+
+async def prepare_evaluation_examples():
+    evaluation_examples = []
+    results = []
+    verdicts_dict = {judge_model.name: [] for judge_model in judge_models}
+
+    for sample in hotpotqa_data:
+        question = sample["question"]
+        reference_answer = sample["answer"]
+        candidate_response = await candidate_model.predict(question)
+
+        # Collect judge verdicts
+        judge_outputs = {}
+        for judge_model in judge_models:
+            judge_output = await judge_model.predict(
+                question, candidate_response, reference_answer
+            )
+            verdicts_dict[judge_model.name].append(judge_output["verdict"])
+            judge_outputs[judge_model.name] = judge_output
+
+        result = {
+            "question": question,
+            "candidate_response": candidate_response,
+            "reference_answer": reference_answer,
+            "judge_verdicts": judge_outputs,
+        }
+        results.append(result)
+
+        evaluation_examples.append(result)
+
+    return evaluation_examples, results, verdicts_dict
+
+
+def compute_kappa_statistics(verdicts_dict):
     """
     Computes Fleiss' Kappa and pairwise Cohen's Kappa statistics for the given verdicts.
 
     Parameters:
-    - verdicts_model1, verdicts_model2, verdicts_model3: Lists of verdicts from each model.
+    - verdicts_dict: Dictionary of verdict lists from each judge model.
 
     Returns:
     - A dictionary containing Fleiss' Kappa and Cohen's Kappa values.
     """
+    verdicts_list = list(verdicts_dict.values())
+    num_judges = len(verdicts_list)
+    num_items = len(verdicts_list[0])
+
     # Prepare data for Fleiss' Kappa
     fleiss_data = []
-    for v1, v2, v3 in zip(verdicts_model1, verdicts_model2, verdicts_model3):
+    for i in range(num_items):
         verdict_counts = defaultdict(int)
-        for verdict in [v1, v2, v3]:
+        for judge_verdicts in verdicts_list:
+            verdict = judge_verdicts[i]
             verdict_counts[verdict] += 1
         # Include counts for all categories
         fleiss_data.append(
@@ -177,54 +174,66 @@ def compute_kappa_statistics(verdicts_model1, verdicts_model2, verdicts_model3):
 
     # Compute Fleiss' Kappa
     fleiss_kappa = ir.fleiss_kappa(fleiss_data, method="fleiss")
-    print("Fleiss' Kappa:", fleiss_kappa)
+    print(f"Fleiss' Kappa: {fleiss_kappa}")
 
-    # Helper function to filter ambiguous verdicts
-    def filter_ambiguous(verdicts1, verdicts2):
-        return zip(
-            *[
-                (v1, v2)
-                for v1, v2 in zip(verdicts1, verdicts2)
-                if v1 != "Ambiguous" and v2 != "Ambiguous"
+    # Compute pairwise Cohen's Kappa
+    kappa_results = {"fleiss_kappa": fleiss_kappa}
+    judge_names = list(verdicts_dict.keys())
+    num_judges = len(judge_names)
+    for i in range(num_judges):
+        for j in range(i + 1, num_judges):
+            v1 = verdicts_dict[judge_names[i]]
+            v2 = verdicts_dict[judge_names[j]]
+            # Filter out ambiguous verdicts
+            filtered_v1_v2 = [
+                (v1_k, v2_k)
+                for v1_k, v2_k in zip(v1, v2)
+                if v1_k != "Ambiguous" and v2_k != "Ambiguous"
             ]
-        )
+            if not filtered_v1_v2:
+                kappa = None
+                print(
+                    f"No data to compute Cohen's Kappa between {judge_names[i]} and {judge_names[j]}"
+                )
+            else:
+                filtered_v1, filtered_v2 = zip(*filtered_v1_v2)
+                kappa = cohen_kappa_score(filtered_v1, filtered_v2)
+                print(
+                    f"Cohen's Kappa between {judge_names[i]} and {judge_names[j]}: {kappa}"
+                )
+            key = f"kappa_{judge_names[i]}_{judge_names[j]}"
+            kappa_results[key] = kappa
 
-    # Compute Cohen's Kappa between Model 1 and Model 2
-    v1_12, v2_12 = filter_ambiguous(verdicts_model1, verdicts_model2)
-    kappa_12 = cohen_kappa_score(list(v1_12), list(v2_12))
-    print("Cohen's Kappa between Model 1 and Model 2:", kappa_12)
-
-    # Compute Cohen's Kappa between Model 1 and Model 3
-    v1_13, v3_13 = filter_ambiguous(verdicts_model1, verdicts_model3)
-    kappa_13 = cohen_kappa_score(list(v1_13), list(v3_13))
-    print("Cohen's Kappa between Model 1 and Model 3:", kappa_13)
-
-    # Compute Cohen's Kappa between Model 2 and Model 3
-    v2_23, v3_23 = filter_ambiguous(verdicts_model2, verdicts_model3)
-    kappa_23 = cohen_kappa_score(list(v2_23), list(v3_23))
-    print("Cohen's Kappa between Model 2 and Model 3:", kappa_23)
-
-    return {
-        "fleiss_kappa": fleiss_kappa,
-        "kappa_12": kappa_12,
-        "kappa_13": kappa_13,
-        "kappa_23": kappa_23,
-    }
+    return kappa_results
 
 
-# Compute Kappa statistics
-kappa_results = compute_kappa_statistics(
-    verdicts_model1, verdicts_model2, verdicts_model3
-)
+async def main():
+    evaluation_examples, results, verdicts_dict = await prepare_evaluation_examples()
 
-# Optional: Use kappa_results as needed
-# For example, you can write them to a file or further analyze them
-print("Computed Kappa Statistics:", kappa_results)
+    # Since we don't have ground truth, we skip scoring and directly compute Kappa statistics
+    kappa_results = compute_kappa_statistics(verdicts_dict)
 
-# Write results to a JSON file
-with open("results.json", "w", encoding="utf-8") as f:
-    json.dump(results, f, ensure_ascii=False, indent=4)
+    # Save results and kappa statistics to JSON files
+    with open("results.json", "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=4)
 
-# Write Kappa results to a separate JSON file
-with open("kappa_results.json", "w", encoding="utf-8") as f:
-    json.dump(kappa_results, f, ensure_ascii=False, indent=4)
+    with open("kappa_results.json", "w", encoding="utf-8") as f:
+        json.dump(kappa_results, f, ensure_ascii=False, indent=4)
+
+    print("Results and Kappa statistics have been saved to JSON files.")
+
+    evaluation = weave.Evaluation(
+        name="judge_evaluation",
+        dataset=evaluation_examples,
+        scorers=scorers,
+    )
+
+    for judge_model in judge_models:
+        print(f"Evaluating {judge_model.name}")
+        await evaluation.evaluate(judge_model)
+
+    print("\nDone.")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
