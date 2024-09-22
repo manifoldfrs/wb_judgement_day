@@ -15,7 +15,7 @@ from weave.flow.scorer import MultiTaskBinaryClassificationF1
 from extract_data import load_hotpotqa, load_triviaqa, load_truthfulqa
 
 # Set environment variable to limit parallel workers
-# os.environ["WEAVE_PARALLELISM"] = "3"
+os.environ["WEAVE_PARALLELISM"] = "3"
 
 load_dotenv()
 weave.init("llm-judge-evaluation")
