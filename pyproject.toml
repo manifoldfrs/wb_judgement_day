@@ -18,6 +18,7 @@ huggingface-hub = "^0.25.0"
 weave = "^0.51.8"
 datasets = "^3.0.0"
 isort = "^5.13.2"
+scikit-learn = "^1.5.2"
 
 
 [build-system]
