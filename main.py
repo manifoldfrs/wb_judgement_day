@@ -35,6 +35,7 @@ def generate_prompt(question, candidate_response, reference_answer):
     """
 
 
+@weave.op()
 def get_candidate_response(question, model_name="mistralai/mistral-7b-instruct:free"):
     response = openai.chat.completions.create(
         model=model_name,
@@ -46,6 +47,7 @@ def get_candidate_response(question, model_name="mistralai/mistral-7b-instruct:f
     return candidate_response
 
 
+@weave.op()
 def get_llm_verdict(question, candidate_response, reference_answer, model_name):
     prompt = generate_prompt(question, candidate_response, reference_answer)
     response = openai.chat.completions.create(
@@ -85,7 +87,7 @@ results: List[Dict] = []
 
 # Process each question-answer pair
 # Use one dataset for now
-for pair in triviaqa_data:
+for pair in hotpotqa_data:
     question = pair["question"]
     reference_answer = pair["answer"]
 
