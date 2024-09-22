@@ -12,9 +12,10 @@ def load_hotpotqa():
     # Extract question and answer from each record
     qa_pairs = []
     for record in records:
-        question = record.get("question")
-        answer = record.get("answer")
-        qa_pairs.append({"question": question, "answer": answer})
+        question = record.get("question", "")
+        answer = record.get("answer", "")
+        if question and answer:
+            qa_pairs.append({"question": question, "answer": answer})
     return qa_pairs
 
 
@@ -25,9 +26,10 @@ def load_truthfulqa():
             # Remove line number
             line = re.sub(r"^\d+\|", "", line)
             record = json.loads(line)
-            question = record.get("Question")
-            answer = record.get("Best Answer")
-            qa_pairs.append({"question": question, "answer": answer})
+            question = record.get("Question", "")
+            answer = record.get("Best Answer", "")
+            if question and answer:
+                qa_pairs.append({"question": question, "answer": answer})
     return qa_pairs
 
 
@@ -38,7 +40,8 @@ def load_triviaqa():
             # Remove line number
             line = re.sub(r"^\d+\|", "", line)
             record = json.loads(line)
-            question = record.get("question")
-            answer = record.get("value")
-            qa_pairs.append({"question": question, "answer": answer})
+            question = record.get("question", "")
+            answer = record.get("answer", "").get("value", "")
+            if question and answer:
+                qa_pairs.append({"question": question, "answer": answer})
     return qa_pairs
