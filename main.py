@@ -1,9 +1,11 @@
+import json
 import os
-from typing import Dict
+from typing import Dict, List
 
 import weave
 from dotenv import load_dotenv
 from openai import OpenAI
+
 from extract_data import load_hotpotqa, load_triviaqa, load_truthfulqa
 
 load_dotenv()
@@ -38,7 +40,7 @@ def get_candidate_response(question, model_name="mistralai/mistral-7b-instruct:f
         model=model_name,
         messages=[{"role": "user", "content": question}],
         max_tokens=150,
-        temperature=0.001,
+        temperature=0.7,
     )
     candidate_response = response.choices[0].message.content.strip()
     return candidate_response
@@ -78,7 +80,11 @@ hotpotqa_data = load_hotpotqa()
 triviaqa_data = load_triviaqa()
 truthfulqa_data = load_truthfulqa()
 
+# List to store results
+results: List[Dict] = []
+
 # Process each question-answer pair
+# Use one dataset for now
 for pair in triviaqa_data:
     question = pair["question"]
     reference_answer = pair["answer"]
@@ -91,12 +97,18 @@ for pair in triviaqa_data:
         question, candidate_response, reference_answer
     )
 
-    # Output the results
-    print(f"Question: {question}\n")
-    print(
-        f"Candidate: mistralai/mistral-7b-instruct:free\nResponse: {candidate_response}"
-    )
-    print(f"Reference Answer: {reference_answer}\n")
-    for model, verdict in verdicts_and_explanations.items():
-        print(f"Judge: {model}\nVerdict and Explanation: {verdict}\n")
-    print(f"Final Verdict: {final_verdict}\n")
+    # Prepare result dictionary
+    result = {
+        "question": question,
+        "candidate_response": candidate_response,
+        "reference_answer": reference_answer,
+        "verdicts": verdicts_and_explanations,
+        "final_verdict": final_verdict,
+    }
+
+    # Append to results list
+    results.append(result)
+
+# Write results to a JSON file
+with open("results.json", "w", encoding="utf-8") as f:
+    json.dump(results, f, ensure_ascii=False, indent=4)
