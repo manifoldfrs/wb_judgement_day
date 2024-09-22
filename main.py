@@ -8,16 +8,20 @@ import openai
 import statsmodels.stats.inter_rater as ir
 import weave
 from dotenv import load_dotenv
-from openai import OpenAI
+from openai import AsyncOpenAI
 from sklearn.metrics import cohen_kappa_score
 from weave.flow.scorer import MultiTaskBinaryClassificationF1
 
 from extract_data import load_hotpotqa, load_triviaqa, load_truthfulqa
 
+# Set environment variable to limit parallel workers
+# os.environ["WEAVE_PARALLELISM"] = "3"
+
 load_dotenv()
 weave.init("llm-judge-evaluation")
 
-openai = OpenAI(
+
+openai = AsyncOpenAI(
     base_url="https://openrouter.ai/api/v1", api_key=os.getenv("OPENROUTER_API_KEY")
 )
 
@@ -97,14 +101,14 @@ judge_models = [
     LLMJudgeModel(
         name="judge-mistral", model_name="mistralai/mistral-7b-instruct:free"
     ),
-    LLMJudgeModel(name="judge-llama", model_name="meta-llama/llama-3.1-8b-instruct"),
-    LLMJudgeModel(name="judge-openai", model_name="openai/chatgpt-4o-latest"),
+    LLMJudgeModel(name="judge-llama", model_name="meta-llama/llama-3.1-70b-instruct"),
+    LLMJudgeModel(name="judge-openai", model_name="openai/gpt-3.5-turbo-instruct"),
 ]
 
 
 @weave.op()
-def judge_score(target_verdict: str, judge_output: Dict[str, str]) -> Dict[str, bool]:
-    return {"correct": target_verdict == judge_output["verdict"]}
+def judge_score(target: str, judge_output: Dict[str, str]) -> Dict[str, bool]:
+    return {"correct": target == judge_output["verdict"]}
 
 
 scorers = [MultiTaskBinaryClassificationF1(class_names=["True", "False"]), judge_score]
@@ -134,6 +138,7 @@ async def prepare_evaluation_examples():
             "candidate_response": candidate_response,
             "reference_answer": reference_answer,
             "judge_verdicts": judge_outputs,
+            "target": ("True" if reference_answer == candidate_response else "False"),
         }
         results.append(result)
 

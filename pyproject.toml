@@ -19,6 +19,7 @@ weave = "^0.51.8"
 datasets = "^3.0.0"
 isort = "^5.13.2"
 scikit-learn = "^1.5.2"
+wandb = "^0.18.1"
 
 
 [build-system]
