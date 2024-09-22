@@ -1,332 +1,722 @@
 [
     {
-        "question": "Which American-born Sinclair won the Nobel Prize for Literature in 1930?",
-        "candidate_response": "The American-born Sinclair who won the Nobel Prize for Literature in 1930 was William Faulkner. Born in New Albany, Mississippi, Faulkner is renowned for his intricate and layered narratives set in the American South. His works often explore themes of the human condition, morality, and the South's racial and class issues. Some of his most famous novels include \"The Sound and the Fury,\" \"As I Lay Dying,\" and \"Absalom, Absalom!\"",
-        "reference_answer": "Sinclair Lewis",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The American-born Sinclair who won the Nobel Prize for Literature in 1930 was Sinclair Lewis, not William Faulkner. While Faulkner is a significant American author, he did not receive the Nobel Prize for Literature until 1949. Sinclair Lewis, on the other hand, was awarded the prize in 1930 for his vivid and ingenious portrayal of American democracy.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because the American-born Sinclair who won the Nobel Prize for Literature in 1930 was actually Sinclair Lewis, not William Faulkner. Sinclair Lewis won the Nobel Prize in 1930 for his novels which \"have created a new and independent type of American literature\".",
-            "openai/chatgpt-4o-latest": "False.\n\nThe candidate's response is incorrect. The American-born Sinclair who won the Nobel Prize for Literature in 1930 was **Sinclair Lewis**, not William Faulkner. Sinclair Lewis was the first American to win the Nobel Prize in Literature, and he is known for works such as \"Main Street\" and \"Babbitt.\" William Faulkner did win the Nobel Prize for Literature, but he received it in 1949, not 1930."
+        "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+        "candidate_response": "No, Scott Derrickson and Ed Wood were not of the same nationality.\n\nScott Derrickson is an American film director, screenwriter, and producer. He was born in Denver, Colorado, U.S.\n\nEd Wood, whose full name was Edward Davis Wood Jr., was also American. He was born in Poughkeepsie, New York, U.S.\n\nSo, while they share the same nationality (American), they were born in different states.",
+        "reference_answer": "yes",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that Scott Derrickson and Ed Wood were not of the same nationality, which is incorrect. Both individuals are American, as stated in the details provided. Therefore, the correct answer should be \"Yes,\" they are of the same nationality."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": ""
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer states that Scott Derrickson and Ed Wood were not of the same nationality, which is incorrect. Both Scott Derrickson and Ed Wood were American, so they were indeed of the same nationality."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "True"
     },
     {
-        "question": "Where in England was Dame Judi Dench born?",
-        "candidate_response": "Dame Judi Dench was born in York, North Yorkshire, England. She was born on December 9, 1934. She is a British actress who has had a prolific career on stage, screen, and television, earning numerous accolades, including two Academy Awards, a BAFTA Award, and a Golden Globe. She is best known for her roles in films such as \"Shakespeare in Love,\" \"Notes on a Scandal,\" and as M in the James Bond series.",
-        "reference_answer": "York",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. Dame Judi Dench was indeed born in York, North Yorkshire, England. The response provided by the candidate is correct.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response correctly states that Dame Judi Dench was born in York, North Yorkshire, England.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response correctly states that Dame Judi Dench was born in York, North Yorkshire, England. The additional information about her career is accurate but not directly relevant to the question. However, the birthplace detail is correct."
+        "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+        "candidate_response": "The woman who portrayed Corliss Archer in the film \"Kiss and Tell\" was Shirley Temple. Later in her life, Shirley Temple Black, as she was known after marriage, held several government positions. Most notably, she served as the United States Ambassador to Ghana from 1974 to 1976, and as the United States Ambassador to Czechoslovakia from 1989 to 1992. She was also the Chief of Protocol of the United States from 1976 to 1977.",
+        "reference_answer": "Chief of Protocol",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer lists several government positions held by Shirley Temple Black, but the Reference Answer specifically mentions \"Chief of Protocol.\" While the Provided Answer includes this position, it also includes additional information that is not asked for in the question. Therefore, the Provided Answer is not a direct and exact match to the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer states that Shirley Temple held the position of Chief of Protocol, which is not accurate. The Reference Answer states that she held the position of United States Ambassador to Ghana and United States Ambassador to Czechoslovakia, among others, but not Chief of Protocol."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "In which decade did Billboard magazine first publish and American hit chart?",
-        "candidate_response": "Billboard magazine first published the American hit chart, known as the \"Hot 100,\" in 1958. Prior to that, Billboard had published various charts, but the Hot 100, which ranks the top-performing songs in the United States, was introduced in this decade.",
-        "reference_answer": "30s",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The Billboard magazine first published the Hot 100 chart in 1958, not the 1930s. The 1930s saw the publication of various charts, but the Hot 100 was introduced much later.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because Billboard magazine first published the American hit chart, known as the \"Hot 100,\" in 1958, which falls in the 1950s decade, not the 1930s.",
-            "openai/chatgpt-4o-latest": "**False**\n\nThe candidate's response is incorrect. While the \"Hot 100\" chart was indeed introduced in 1958, Billboard magazine first published an American hit chart in the 1930s, not the 1950s. The first chart, called the \"Hit Parade,\" was published in 1936. Therefore, the correct decade is the 1930s, not the 1950s."
+        "question": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+        "candidate_response": "The series you're describing sounds like the \"Lunar Chronicles\" by Marissa Meyer. While it's not a perfect match, it does have some similarities:\n\n1. **Science Fantasy**: The series is a blend of science fiction and fantasy, with elements of both genres woven into the story.\n\n2. **Young Adult**: It is indeed a young adult series.\n\n3. **First Person Narration**: Each book in the main series is told from the perspective of a different female protagonist.\n\n4. **Companion Books**: There are two companion books, \"Fairest\" and \"Stars Above\", which provide backstories",
+        "reference_answer": "Animorphs",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The provided answer describes \"The Lunar Chronicles\" by Marissa Meyer, which does not match the reference answer \"Animorphs.\" The series \"Animorphs\" by K.A. Applegate is a science fantasy young adult series told in first person, with companion books narrating the stories of enslaved worlds and alien species."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer, \"The Lunar Chronicles\" by Marissa Meyer, does not match the Reference Answer, \"Animorphs.\" While both series are science fiction and young adult, the Lunar Chronicles does not focus on enslaved worlds and alien species like Animorphs does. Therefore, the Provided Answer is incorrect."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "False"
     },
     {
-        "question": "From which country did Angola achieve independence in 1975?",
-        "candidate_response": "Angola achieved independence from Portugal in 1975. Portugal had ruled Angola as a colony for over 500 years, starting from the 16th century. The independence of Angola was the result of a long struggle for freedom by Angolan nationalists. The struggle intensified in the 1960s and 1970s, leading to a protracted war. The People's Movement for the Liberation of Angola (MPLA) emerged as the most powerful nationalist movement, and on November 11, 1975, Angola officially gained independence. The country has since been governed by various political regimes, with the MPLA being the party",
-        "reference_answer": "Portugal",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. Angola achieved independence from Portugal in 1975, so the candidate's response is correct. The candidate accurately described the historical context and the key events leading up to Angola's independence, including the role of the People's Movement for the Liberation of Angola (MPLA).",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct because it accurately states that Angola achieved independence from Portugal in 1975. The reference answer also confirms this, stating that Portugal had ruled Angola as a colony for over 500 years, which is consistent with the candidate's response.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. Angola did achieve independence from Portugal in 1975, following a long struggle for freedom. The People's Movement for the Liberation of Angola (MPLA) played a significant role in the independence movement, and Angola officially gained independence on November 11, 1975. The additional historical context provided by the candidate is accurate."
+        "question": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+        "candidate_response": "Yes, the Laleli Mosque and the Esma Sultan Mansion are both located in the Laleli neighborhood of Istanbul, Turkey. The Laleli neighborhood is part of the Fatih district, which is the historic peninsula of Istanbul. These two landmarks are situated relatively close to each other, making it convenient for visitors to explore both sites within the same area.",
+        "reference_answer": "no",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that the Laleli Mosque and the Esma Sultan Mansion are both located in the Laleli neighborhood, while the Reference Answer indicates that they are not in the same neighborhood. Therefore, the Provided Answer is incorrect."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Reference Answer states that the Laleli Mosque and Esma Sultan Mansion are not located in the same neighborhood, while the Provided Answer incorrectly states that they are both located in the Laleli neighborhood. Therefore, the Provided Answer is false."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Which city does David Soul come from?",
-        "candidate_response": "David Soul is an American actor, singer, and songwriter, best known for his role in the television series \"Starsky and Hutch.\" He was born in Chicago, Illinois, United States.",
-        "reference_answer": "Chicago",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. David Soul is indeed from Chicago, Illinois, United States. The candidate's response is correct.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response states that David Soul is an American actor, but David Soul is actually a British actor, singer, and songwriter. He was born in Chicago, Illinois, but he holds British citizenship.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response correctly states that David Soul was born in Chicago, Illinois, which matches the reference answer. Therefore, the response is accurate."
+        "question": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
+        "candidate_response": "The director of the romantic comedy \"Big Stone Gap\" is Adriana Trigiani. She is based in New York City, specifically in Manhattan. Trigiani is not only a director but also a best-selling author and has a background in television writing and production. \"Big Stone Gap\" is her directorial debut, and the film is an adaptation of her novel of the same name.",
+        "reference_answer": "Greenwich Village, New York City",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that Adriana Trigiani is based in Manhattan, New York City. However, the Reference Answer specifies that she is based in Greenwich Village, New York City. Although Greenwich Village is a neighborhood within Manhattan, the Provided Answer does not specify Greenwich Village and thus does not match the Reference Answer exactly."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "unsafe\nS5"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer states that the director of \"Big Stone Gap\" is based in Manhattan, New York City. However, the Reference Answer specifies Greenwich Village, which is a neighborhood within Manhattan. Therefore, the Provided Answer is not entirely accurate as it does not specify the specific neighborhood within Manhattan where the director is based."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "Who won Super Bowl XX?",
-        "candidate_response": "Super Bowl XX was won by the Chicago Bears on January 26, 1986. They defeated the New England Patriots with a score of 46-10. The Most Valuable Player of the game was linebacker Richard Dent. The Bears' coach was Mike Ditka, and their quarterback was Jim McMahon. This Super Bowl is notable for the Bears' dominant defense, known as the \"46 defense,\" and for the famous \"Super Bowl Shuffle\" rap video made by the Bears players.",
-        "reference_answer": "Chicago Bears",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Super Bowl XX was won by the Chicago Bears, and the details provided about the game, such as the score, MVP, coach, quarterback, and the \"Super Bowl Shuffle,\" are accurate.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response accurately states that the Chicago Bears won Super Bowl XX, defeated the New England Patriots 46-10, and that Richard Dent was the MVP. The response also correctly identifies the Bears' coach (Mike Ditka) and quarterback (Jim McMahon). The additional information about the \"46 defense\" and the \"Super Bowl Shuffle\" rap video is also accurate.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. The Chicago Bears won Super Bowl XX on January 26, 1986, defeating the New England Patriots with a score of 46-10. The Most Valuable Player (MVP) was indeed linebacker Richard Dent, and the Bears' coach was Mike Ditka. The response also correctly mentions the Bears' dominant defense and the \"Super Bowl Shuffle\" video."
+        "question": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
+        "candidate_response": "The debut album \"2014 S/S\" was released by the South Korean boy group WINNER, which was formed by YG Entertainment. The group was created through the survival program \"WIN: Who Is Next\" in 2013. \"2014 S/S\" was released on August 12, 2014.",
+        "reference_answer": "YG Entertainment",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies YG Entertainment as the company that formed the South Korean boy group WINNER, which aligns with the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that the South Korean boy group WINNER was formed by YG Entertainment, which is the same as the Reference Answer. The information provided is accurate and supported by the history of the group's formation."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Which was the first European country to abolish capital punishment?",
-        "candidate_response": "The first European country to officially abolish capital punishment for all crimes was Norway in 1902. Prior to that, it was Switzerland, which abolished capital punishment for ordinary crimes in 1874, but retained it for high treason and war crimes, which was eventually abolished in 1942. However, Norway's abolition was for all crimes, making it the first European country to do so.",
-        "reference_answer": "Norway",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Norway was indeed the first European country to abolish capital punishment for all crimes in 1902.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct. According to historical records, Norway was the first European country to officially abolish capital punishment for all crimes in 1902.",
-            "openai/chatgpt-4o-latest": "**False.**\n\nThe candidate's response is incorrect. The first European country to abolish capital punishment was actually the Grand Duchy of Tuscany (now part of Italy) in 1786, not Norway in 1902. Tuscany abolished the death penalty for all crimes under the rule of Grand Duke Leopold II. Norway did abolish capital punishment for civilian crimes in 1902, but it was not the first European country to do so."
+        "question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
+        "candidate_response": "The person you're referring to is likely Aladin Akyurek. He was a renowned consultant, author, and speaker who helped organizations improve their performance. He was known for his work in the areas of leadership, change management, and organizational development. Aladin Akyurek used his stage name \"Aladin\" professionally and was recognized for his engaging and innovative approaches to consulting and training. He passed away in 2013, but his work continues to influence many in the field of organizational development.",
+        "reference_answer": "Eenasul Fateh",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer refers to Aladin Akyurek, while the Reference Answer is Eenasul Fateh. These are two different individuals, so the Provided Answer is incorrect."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "unsafe\nS3"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly identifies Aladin Akyurek as the individual known by the stage name Aladin who helped organizations improve their performance. The correct individual associated with the stage name Aladin and consulting work is Eenasul Fateh."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "In which country did he widespread use of ISDN begin in 1988?",
-        "candidate_response": "Germany is the country where the widespread use of Integrated Services Digital Network (ISDN) began in 1988. ISDN was developed by Deutsche Telekom, the German telecommunications company, and was initially deployed in Germany before its adoption in other countries.",
-        "reference_answer": "Japan",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The widespread use of ISDN began in Germany in 1988, not Japan. Japan started using ISDN in 1991, three years after its introduction in Germany.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response states that Germany is the country where the widespread use of ISDN began in 1988, but the reference answer is Japan. This indicates that the candidate's response is incorrect.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe widespread use of ISDN began in Japan in 1988, not Germany. While Germany did play a significant role in the development and deployment of ISDN, Japan was the first country to implement it on a large scale."
+        "question": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+        "candidate_response": "The Lewiston Maineiacs, a former ice hockey team, played their home games at the Androscoggin Bank Colisée in Lewiston, Maine. The arena has a seating capacity of approximately 3,677 people for ice hockey games.",
+        "reference_answer": "3,677 seated",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly states that the Androscoggin Bank Colisée, where the Lewiston Maineiacs played their home games, has a seating capacity of approximately 3,677 people for ice hockey games, which matches the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that the Androscoggin Bank Colisée in Lewiston, Maine has a seating capacity of approximately 3,677 people for ice hockey games, which matches the Reference Answer of 3,677 seated. This information can be verified through official arena capacity records."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "True"
     },
     {
-        "question": "What is Bruce Willis' real first name?",
-        "candidate_response": "Bruce Willis' real first name is Walter. However, he is known professionally as Bruce.",
-        "reference_answer": "Walter",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. Bruce Willis' real first name is Walter. The candidate's response is correct.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct. Bruce Willis' real first name is indeed Walter, and he is known professionally as Bruce.",
-            "openai/chatgpt-4o-latest": "True.\n\nBruce Willis' real first name is indeed Walter. His full name is Walter Bruce Willis, but he is known professionally by his middle name, Bruce. The candidate's response is correct."
+        "question": "Who is older, Annie Morton or Terry Richardson?",
+        "candidate_response": "Annie Morton and Terry Richardson are both public figures, but they are from different eras and fields, which might be causing some confusion.\n\n1. **Annie Morton** is an actress known for her role in the 1995 film \"Empire Records.\" She was born on December 24, 1970.\n\n2. **Terry Richardson** is a photographer known for his fashion and portrait work. He was born on August 14, 1965.\n\nBased on their birthdates, Terry Richardson is older than Annie Morton.",
+        "reference_answer": "Terry Richardson",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies Terry Richardson as the older individual based on their birthdates. Terry Richardson was born on August 14, 1965, and Annie Morton was born on December 24, 1970, making Terry Richardson older."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "unsafe\nS1"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that Terry Richardson is older than Annie Morton based on their birthdates. This is a factual statement that can be verified."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "Which William wrote the novel Lord Of The Flies?",
-        "candidate_response": "The novel \"Lord of the Flies\" was written by William Golding. It was his first novel, published in 1954. The story is set on a deserted island and explores themes of civilization and its decline, as a group of British boys try to govern themselves after a plane crash.",
-        "reference_answer": "Golding",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. William Golding is indeed the author of \"Lord of the Flies.\"",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct. William Golding is indeed the author of the novel \"Lord of the Flies\", which was his first novel, published in 1954. The novel explores the themes of civilization and its decline, as a group of British boys try to govern themselves after a plane crash on a deserted island.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. \"Lord of the Flies\" was indeed written by William Golding, and the additional information provided about the novel's themes and setting is accurate."
+        "question": "Are Local H and For Against both from the United States?",
+        "candidate_response": "Yes, both Local H and For Against are bands from the United States.\n\nLocal H is an alternative rock band that formed in Zion, Illinois, in 1987. They are known for their unique sound, which often features just two members: a guitarist/vocalist and a drummer.\n\nFor Against is a post-punk/dream pop band that originated in Lincoln, Nebraska, in the mid-1980s. They are known for their atmospheric and introspective music.\n\nBoth bands have contributed to the American music scene, each with their distinctive styles.",
+        "reference_answer": "yes",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly states that both Local H and For Against are bands from the United States, which aligns with the Reference Answer. The additional details about the bands' origins and styles further support the accuracy of the Provided Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that both Local H and For Against are bands from the United States, which aligns with the Reference Answer. Both bands have origins in different states within the United States and have contributed to the American music scene."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Which innovation for the car was developed by Prince Henry of Prussia in 1911?",
-        "candidate_response": "The innovation that Prince Henry of Prussia, also known as Kaiser Heinrich, developed in 1911 was the high-speed automobile testing track. This track, located in the Aachen district of Germany, was designed to test the performance, durability, and safety of cars and was considered a significant milestone in the early development of the automotive industry. It included a variety of surfaces, such as gravel, sand, and asphalt, as well as various grades and curves to simulate real-world driving conditions. This track was also used for training drivers, including racing drivers, as well as for setting new speed records.",
-        "reference_answer": "Windshield wipers",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The candidate's response is incorrect. Prince Henry of Prussia did not invent windshield wipers. The first windshield wipers were patented by Mary Anderson in 1903, more than a decade before Prince Henry developed the high-speed automobile testing track in 1911.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because the innovation developed by Prince Henry of Prussia in 1911 was actually the windshield wiper, not a high-speed automobile testing track.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe candidate's response is incorrect. The innovation developed by Prince Henry of Prussia in 1911 was **windshield wipers**, not a high-speed automobile testing track. The candidate's description of a testing track is unrelated to the specific innovation attributed to Prince Henry of Prussia."
+        "question": "What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area?",
+        "candidate_response": "The fight song of the University of Kansas, whose main campus is in Lawrence, Kansas, and which has branch campuses in the Kansas City metropolitan area, is called \"I'm a Jayhawk.\" The song is a popular tradition at Kansas athletic events and other university functions.",
+        "reference_answer": "Kansas Song",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that the fight song of the University of Kansas is called \"I'm a Jayhawk,\" but the Reference Answer correctly identifies it as \"Kansas Song.\""
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer mentions the fight song of the University of Kansas as \"I'm a Jayhawk,\" while the Reference Answer simply states \"Kansas Song.\" Since the fight song of the University of Kansas is officially known as \"I'm a Jayhawk,\" the Provided Answer is more specific and accurate than the Reference Answer."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "False"
     },
     {
-        "question": "How is musician William Lee Conley better known?",
-        "candidate_response": "William Lee Conley is better known by his stage name, Bill Withers, an American singer-songwriter who gained popularity in the 1970s with hits like \"Ain't No Sunshine,\" \"Lean On Me,\" \"Lovely Day,\" and \"Just the Two of Us.\" He was known for his soulful voice and sincere, heartfelt lyrics. Despite his success, he retired from the music industry in 1985.",
-        "reference_answer": "Big Bill Broonzy",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. William Lee Conley is better known by his stage name, Bill Withers, not Big Bill Broonzy. Big Bill Broonzy was a different American blues singer and guitarist who was active in the 1920s, 1930s, and 1940s.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response accurately identifies William Lee Conley as Bill Withers, a renowned American singer-songwriter known for his soulful voice and hits like \"Ain't No Sunshine,\" \"Lean On Me,\" \"Lovely Day,\" and \"Just the Two of Us.\" The reference answer, Big Bill Broonzy, is incorrect as it refers to a different musician, William Lee Connelly, also known as Big Bill Broonzy, an American blues singer and guitarist.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe candidate's response incorrectly identifies William Lee Conley as Bill Withers. In fact, William Lee Conley is better known as Big Bill Broonzy, a prominent blues musician. Bill Withers is a different artist altogether."
+        "question": "What screenwriter with credits for \"Evolution\" co-wrote a film starring Nicolas Cage and Téa Leoni?",
+        "candidate_response": "The screenwriter you're referring to is likely David Diamond. He co-wrote the film \"Evolution\" (2001) with David Weissman and Don Jakoby. Additionally, David Diamond and David Weissman co-wrote the film \"Family Man\" (2000), which stars Nicolas Cage and Téa Leoni. Therefore, David Diamond is the screenwriter who fits your description.",
+        "reference_answer": "David Weissman",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Reference Answer is David Weissman, while the Provided Answer is David Diamond. Although David Diamond is mentioned as a co-writer, the specific screenwriter being asked about is David Weissman."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "SEE ANSWER"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly states that David Diamond co-wrote the film \"Family Man\" starring Nicolas Cage and Téa Leoni. The correct co-writer of the film is David Weissman, not David Diamond."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "False"
     },
     {
-        "question": "How is Joan Molinsky better known?",
-        "candidate_response": "Joan Molinsky is better known by her stage name, Joan Rivers, a renowned American comedian, actress, and talk show host. She was particularly recognized for her sharp wit, self-deprecating humor, and the popular late-night talk show \"The Late Show with Joan Rivers.\" However, it's essential to clarify that Joan Rivers passed away in 2014. Her legacy continues to inspire comedians and entertainers worldwide.",
-        "reference_answer": "Joan Rivers",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Joan Molinsky is indeed better known by her stage name, Joan Rivers, and she was a renowned American comedian, actress, and talk show host. Her sharp wit, self-deprecating humor, and the popular late-night talk show \"The Late Show with Joan Rivers\" are all accurate descriptions of her career. However, it's important to note that Joan Rivers passed away in 2014, as mentioned in the response.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response accurately identifies Joan Molinsky as Joan Rivers, a comedian, actress, and talk show host, and mentions her notable work, including \"The Late Show with Joan Rivers.\" The response also acknowledges her passing in 2014.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. Joan Molinsky is indeed better known by her stage name, Joan Rivers. The response provides additional context about her career as a comedian, actress, and talk show host, which aligns with the reference answer."
+        "question": "What year did Guns N Roses perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective?",
+        "candidate_response": "Guns N' Roses performed a promo for the movie \"The Terminator 2: Judgment Day\" in 1991. The song \"You Could Be Mine\" from their album \"Use Your Illusion II\" was featured in the movie. Arnold Schwarzenegger starred in the film as the Terminator, a cyborg sent back in time to protect John Connor. Although Schwarzenegger's character is not a former New York Police detective in the Terminator series, the collaboration between Guns N' Roses and the movie is notable.",
+        "reference_answer": "1999",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that Guns N' Roses performed a promo for \"The Terminator 2: Judgment Day\" in 1991, which is correct. However, the Reference Answer is 1999, which does not match the year given in the Provided Answer. Therefore, the Provided Answer is incorrect."
+            },
+            "judge-llama": {
+                "verdict": "False",
+                "explanation": "False\n    The movie came out in 1991 both the provided answer and the reference answer mention it"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly states that Guns N' Roses performed a promo for the movie \"The Terminator 2: Judgment Day\" in 1991. In reality, Guns N' Roses performed a promo for the movie in 1991, not 1999."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "In which branch of the arts is Patricia Neary famous?",
-        "candidate_response": "Patricia Neary is a well-known figure in the field of ballet. She is a retired American ballet dancer who had a successful career with the New York City Ballet (NYCB) for 23 years, from 1973 to 1996. She was promoted to the position of principal dancer in 1982.\n\nNeary is particularly recognized for her interpretations of the works of George Balanchine, and she was one of the last dancers to have worked with the legendary choreographer, who passed away in 1983. Some of her notable roles include the Sugarplum Fairy in \"The Nutcracker,\" Giselle",
-        "reference_answer": "Ballet",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. Patricia Neary is indeed famous in the field of ballet, as stated in the question. Her career with the New York City Ballet and her notable roles in ballet performances support this.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response accurately identifies Patricia Neary as a renowned ballet dancer, specifically highlighting her association with the New York City Ballet and her notable roles in various ballets, including \"The Nutcracker\" and \"Giselle\". The response also correctly mentions her connection to George Balanchine, the legendary choreographer.",
-            "openai/chatgpt-4o-latest": "**False**\n\nWhile the candidate correctly identifies that Patricia Neary is famous in the field of ballet, there are several factual inaccuracies in the response. \n\n1. Patricia Neary did not dance with the New York City Ballet from 1973 to 1996. She was actually a principal dancer with the company in the 1960s.\n2. She was not promoted to principal dancer in 1982, as she had already been a principal dancer earlier in her career.\n3. The mention of her performing roles like the Sugarplum Fairy in \"The Nutcracker\" and \"Giselle\" is also inaccurate, as these are not typically associated with her career, especially since \"Giselle\" is not a Balanchine ballet"
+        "question": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+        "candidate_response": "Yes, both Random House Tower and 888 7th Avenue are associated with real estate, although they serve different purposes:\n\n1. **Random House Tower**: Located at 1745 Broadway in New York City, this building is primarily known for being the headquarters of Penguin Random House, one of the largest publishing companies in the world. While it is a commercial office building, its use is specific to the publishing industry rather than general real estate.\n\n2. **888 7th Avenue**: This is a high-rise office building located in Midtown Manhattan, New York City. It is used for commercial real estate purposes, housing various businesses and offices. The building is part of the",
+        "reference_answer": "no",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that both Random House Tower and 888 7th Avenue are associated with real estate, but the Reference Answer is \"no.\" The Provided Answer gives detailed information about the buildings' uses, but it does not align with the simple \"no\" given in the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly states that both Random House Tower and 888 7th Avenue are associated with real estate. While 888 7th Avenue is indeed used for commercial real estate purposes, Random House Tower is primarily known for being the headquarters of a publishing company, not for general real estate use."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "Which country is Europe's largest silk producer?",
-        "candidate_response": "China is the largest silk producer in the world, not Europe. While Italy and France are known for their silk production in Europe, their rates do not surpass China's significant production. Silk production has been deeply rooted in Chinese history and culture for centuries.",
-        "reference_answer": "Italy",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The candidate's response is incorrect. While Italy and France are significant silk producers in Europe, China is the largest silk producer globally, not Europe. The misconception might arise due to the historical prominence of silk production in Italy and France, particularly in the Renaissance period. However, China's production far surpasses that of any European country.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because while China is indeed the world's largest silk producer, the question specifically asks for Europe's largest silk producer. Italy is actually considered the largest silk producer in Europe, not China.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe candidate's response is incorrect. The question specifically asks about the largest silk producer in Europe, not the world. While China is indeed the largest silk producer globally, the largest silk producer in Europe is Italy, as correctly stated in the reference answer. The candidate's response does not address the correct European country."
+        "question": "The football manager who recruited David Beckham managed Manchester United during what timeframe?",
+        "candidate_response": "The football manager who recruited David Beckham to Manchester United was Sir Alex Ferguson. Sir Alex Ferguson managed Manchester United from November 1986 until May 2013. David Beckham was part of the Manchester United youth system and made his first-team debut in 1992. He became a regular first-team player under Ferguson and played for the club until 2003.",
+        "reference_answer": "from 1986 to 2013",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies Sir Alex Ferguson as the manager who recruited David Beckham and specifies that he managed Manchester United from November 1986 until May 2013, which aligns with the Reference Answer of \"from 1986 to 2013.\""
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that Sir Alex Ferguson managed Manchester United from November 1986 until May 2013, which matches the Reference Answer of \"from 1986 to 2013.\" Additionally, the Provided Answer accurately mentions David Beckham's debut in 1992 and his time playing for Manchester United until 2003 under Ferguson's management."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "True"
     },
     {
-        "question": "The VS-300 was a type of what?",
-        "candidate_response": "The VS-300 was a type of vacuum tube, specifically a diode, used in early electronics for rectification and signal detection. It was a triode vacuum tube, which means it had three electrodes: a cathode, a grid, and a plate (anode). This type of vacuum tube was widely used in radio receivers, transmitters, and other early electronic devices during the 1930s and 1940s before the development of solid-state semiconductor devices.",
-        "reference_answer": "Helicopter",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The VS-300 was not a type of helicopter. It was a vacuum tube, specifically a diode, used in early electronics.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because the VS-300 is actually a type of helicopter, not a vacuum tube. The VS-300 was a single-rotor helicopter designed by Igor Sikorsky in 1939, and it is considered one of the first practical helicopters.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe VS-300 was not a vacuum tube or any type of electronic component. It was actually an early helicopter designed by Igor Sikorsky. The VS-300, which first flew in 1939, was one of the first successful single-rotor helicopters and played a significant role in the development of modern helicopters. The candidate's response incorrectly describes it as a vacuum tube, which is unrelated to the VS-300."
+        "question": "Brown State Fishing Lake is in a country that has a population of how many inhabitants ?",
+        "candidate_response": "Brown State Fishing Lake is located in the United States, specifically in the state of Kansas. As of the latest estimates, the United States has a population of over 331 million inhabitants. Kansas itself has a population of approximately 2.9 million people.",
+        "reference_answer": "9,984",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that the United States has a population of over 331 million inhabitants, which is correct, but it does not match the Reference Answer of 9,984. The Reference Answer likely refers to a specific context or a smaller population directly related to Brown State Fishing Lake, which the Provided Answer does not address."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer gives information about the population of the United States and Kansas, but it does not directly answer the question about the population of inhabitants in the country where Brown State Fishing Lake is located. The Reference Answer states that the population is 9,984, which is not mentioned in the Provided Answer."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "False"
     },
     {
-        "question": "At which university did Joseph Goebbels become a doctor of philosophy?",
-        "candidate_response": "Joseph Goebbels did not earn a doctorate in philosophy at a university. He studied literature and philosophy at Heidelberg University, but he left without completing his degree. He was awarded an honorary doctorate in philosophy by the University of Heidelberg in 1949, but it was a posthumous honor granted by the Nazi regime. Goebbels completed his doctorate in German literature at Heidelberg in 1922.",
-        "reference_answer": "Heidelberg",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True, but with a qualification. The candidate's response is mostly correct, as Joseph Goebbels did study at Heidelberg University and did complete his doctorate there, but it was in German literature, not philosophy. The honorary doctorate in philosophy he received posthumously in 1949 is not the same as the actual doctorate he earned in 1922.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct. Joseph Goebbels did not earn a doctorate in philosophy, but rather in German literature at Heidelberg University in 1922.",
-            "openai/chatgpt-4o-latest": "**False**\n\nThe candidate's response contains several inaccuracies. Joseph Goebbels did indeed earn a doctorate in philosophy, but the details provided are incorrect. Goebbels completed his doctoral dissertation in German literature at Heidelberg University in 1921, not 1922. Additionally, there was no honorary doctorate awarded to him in 1949, as the Nazi regime had already collapsed by then (in 1945). The claim about a posthumous honor is also false. Therefore, the candidate's response is incorrect."
+        "question": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
+        "candidate_response": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as the North Atlantic Conference (NAC) from 1988 to 1996. The conference is now known as the America East Conference.",
+        "reference_answer": "the North Atlantic Conference",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies the North Atlantic Conference (NAC) as the former name of the conference in which the Vermont Catamounts men's soccer team competed from 1988 to 1996. It also accurately states that the conference is now known as the America East Conference."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly states that the conference was known as the North Atlantic Conference from 1988 to 1996. The correct answer is the North Atlantic Conference, so the Provided Answer is incorrect."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Which prince is Queen Elizabeth II's youngest son?",
-        "candidate_response": "Queen Elizabeth II's youngest son is Prince Edward, Earl of Wessex. He was born on March 10, 1964, and is the fourth child and the youngest of four children born to Queen Elizabeth II and Prince Philip, Duke of Edinburgh. Prince Edward is currently 12th in line to succeed to the British throne. He married Sophie Rhys-Jones in 1999, and they have two children, Lady Louise Windsor and James, Viscount Severn.",
-        "reference_answer": "Edward",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Prince Edward, Earl of Wessex, is indeed Queen Elizabeth II's youngest son.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct. Prince Edward, Earl of Wessex, is indeed Queen Elizabeth II's youngest son, born on March 10, 1964.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. Queen Elizabeth II's youngest son is indeed Prince Edward, Earl of Wessex. He was born on March 10, 1964, and is the fourth and youngest child of Queen Elizabeth II and Prince Philip. The additional details about his marriage and children are also accurate."
+        "question": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
+        "candidate_response": "Yes, both Giuseppe Verdi and Ambroise Thomas are renowned opera composers.\n\nGiuseppe Verdi (1813-1901) was an Italian composer known for his operas such as \"La Traviata,\" \"Rigoletto,\" \"Aida,\" and \"Otello.\" His works are celebrated for their dramatic intensity and memorable melodies, and he is considered one of the greatest opera composers of all time.\n\nAmbroise Thomas (1811-1896) was a French composer who is best known for his operas \"Mignon\" and \"Hamlet.\" While his fame may not be as widespread as Verdi",
+        "reference_answer": "yes",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies both Giuseppe Verdi and Ambroise Thomas as renowned opera composers and provides accurate details about their works and significance. This aligns with the Reference Answer, which confirms that both are indeed opera composers."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that both Giuseppe Verdi and Ambroise Thomas are renowned opera composers, which is supported by historical and musical evidence. Both composers are well-known for their contributions to the opera genre."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "When did the founder of Jehovah's Witnesses say the world would end?",
-        "candidate_response": "Charles Taze Russell, one of the early leaders of the Bible Student movement, which later became the Jehovah's Witnesses, made several predictions about the end of the world. However, these predictions were proven incorrect, and the organization now focuses on sharing their interpretation of the Bible and evangelism, rather than specific prophetic dates.\n\nRussell's predictions included the following:\n\n1. In 1874, he predicted that the Second Coming of Christ would occur, and the beginning of the Millennium, which would last a thousand years.\n\n2. In 1914, he predicted that the end of the \"Gentile Times\" would occur, mark",
-        "reference_answer": "1914",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True, Charles Taze Russell did predict that the end of the \"Gentile Times\" would occur in 1914. However, it's important to note that this prediction was not about the end of the world, but rather a significant event in the organization's eschatology. The Jehovah's Witnesses' current focus on sharing their interpretation of the Bible and evangelism, rather than specific prophetic dates, is a reflection of their adjustments to their beliefs following the failed predictions.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response accurately states that Charles Taze Russell, one of the early leaders of the Bible Student movement, predicted that the end of the \"Gentile Times\" would occur in 1914. This is a specific and correct prediction made by Russell, which is mentioned in the provided text.",
-            "openai/chatgpt-4o-latest": "**False.**\n\nThe candidate's response is partially correct but incomplete and somewhat misleading. Charles Taze Russell did predict that 1914 would mark the end of the \"Gentile Times\" and the beginning of significant events related to the end times, but he did not specifically predict that the world would end in 1914. Instead, he believed that 1914 would mark the beginning of a period of turmoil leading to the establishment of God's Kingdom on Earth. Additionally, the candidate's mention of 1874 refers to Russell's belief that Christ's invisible presence began in that year, not the end of the world.\n\nThe reference answer \"1914\" is correct in the sense that Russell predicted significant events for that year, but the candidate's"
+        "question": "Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?",
+        "candidate_response": "Roger O. Egeberg served as the Assistant Secretary for Health and Scientific Affairs during the administration of President Richard Nixon. Nixon served as the President of the United States from January 20, 1969, to August 9, 1974.",
+        "reference_answer": "1969 until 1974",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies Roger O. Egeberg as the Assistant Secretary for Health and Scientific Affairs during the administration of President Richard Nixon, and accurately states that Nixon served from January 20, 1969, to August 9, 1974. This matches the Reference Answer of \"1969 until 1974.\""
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "Maintin"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that Roger O. Egeberg served as Assistant Secretary for Health and Scientific Affairs during the administration of President Richard Nixon, who served from 1969 until 1974. The Provided Answer aligns with the Reference Answer in terms of the years Nixon served as President."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "Who found the remains of the Titanic?",
-        "candidate_response": "The remains of the RMS Titanic were discovered in 1985 by a team led by Dr. Robert Ballard, an American deep-sea explorer. The expedition was funded by Ted Arison, the founder of Carnival Cruise Lines. The wreckage was found about 370 miles south-southeast of Newfoundland, Canada, at a depth of approximately 12,500 feet.",
-        "reference_answer": "Robert Ballard",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Robert Ballard led the team that discovered the remains of the RMS Titanic in 1985.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response accurately identifies Dr. Robert Ballard as the leader of the team that discovered the remains of the Titanic in 1985. The response also correctly mentions the funding source (Ted Arison) and the location of the wreckage (370 miles south-southeast of Newfoundland, Canada, at a depth of approximately 12,500 feet).",
-            "openai/chatgpt-4o-latest": "False.\n\nWhile the candidate correctly identifies Dr. Robert Ballard as the leader of the team that discovered the Titanic's remains in 1985, the claim that the expedition was funded by Ted Arison, the founder of Carnival Cruise Lines, is incorrect. The expedition was actually a joint venture between the Woods Hole Oceanographic Institution and the French National Institute of Oceanography (IFREMER), and it was partially funded by the U.S. Navy, which had a covert interest in the mission related to searching for lost submarines."
+        "question": "Which writer was from England, Henry Roth or Robert Erskine Childers?",
+        "candidate_response": "Robert Erskine Childers was from England. He was born in London in 1870. Childers is known for his novel \"The Riddle of the Sands,\" which is considered one of the earliest spy novels.\n\nHenry Roth, on the other hand, was an American writer. He was born in Galicia, Austria-Hungary (now part of Ukraine), but his family immigrated to the United States when he was a child. Roth is best known for his novel \"Call It Sleep.\"",
+        "reference_answer": "Robert Erskine Childers DSC",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies Robert Erskine Childers as being from England and provides accurate details about his birthplace and notable work. It also correctly identifies Henry Roth as an American writer and provides accurate details about his birthplace and notable work. The information aligns with the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly states that Robert Erskine Childers was from England. In reality, Childers was born in London, but he was actually Irish, not English. He was a British nationalist and author, but he was not from England."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Who was the only Spice Girl not to have a middle name?",
-        "candidate_response": "Among the Spice Girls, the one who did not have a publicly known middle name was Melanie Brown, also known as Scary Spice. The others in the group – Victoria Beckham (Posh Spice), Emma Bunton (Baby Spice), Melanie Chisholm (Sporty Spice), and Geri Halliwell (Ginger Spice) – all have middle names. However, it's important to note that the absence of a middle name does not mean that Melanie Brown may not have one privately.",
-        "reference_answer": "Posh Spice",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Melanie Brown, also known as Scary Spice, did not have a publicly known middle name among the Spice Girls. The others in the group did have middle names.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because the reference answer is Posh Spice (Victoria Beckham), not Melanie Brown (Scary Spice). According to the text, Victoria Beckham is the Spice Girl with a publicly known middle name, whereas Melanie Brown does not have a publicly known middle name.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe correct answer is Victoria Beckham (Posh Spice), who is the only Spice Girl without a middle name. The candidate's response incorrectly identifies Melanie Brown (Scary Spice) as the one without a middle name."
+        "question": "Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?",
+        "candidate_response": "Besides Sergio \"Checo\" Pérez, who was born in 1990 and has driven for Force India (now known as Aston Martin), another Mexican Formula One race car driver who has held the podium is Pedro Rodríguez. Rodríguez achieved two Grand Prix victories and several podium finishes during his career in the 1960s and early 1970s. He is considered one of Mexico's most successful racing drivers.",
+        "reference_answer": "Pedro Rodríguez",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies Pedro Rodríguez as another Mexican Formula One race car driver who has held the podium, which matches the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly identifies Pedro Rodríguez as another Mexican Formula One race car driver who has held the podium besides Sergio \"Checo\" Pérez. This is a factual statement supported by historical records of Pedro Rodríguez's achievements in Formula One racing."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "False"
     },
     {
-        "question": "What are the international registration letters of a vehicle from Algeria?",
-        "candidate_response": "In Algeria, the international registration certificate (IRC) for a vehicle is known as the \"Carte de Circulation Internationale\" (CCI). This document is issued by the Algerian Ministry of the Interior and is based on the 1968 Convention on Road Traffic.\n\nThe CCI serves as a temporary permit for a vehicle to circulate in countries that are parties to the 1968 Convention, including most European countries, and allows the vehicle to use foreign roads for up to 12 months.\n\nThe CCI is usually available for vehicles that are registered in Algeria and are equipped with Algerian license plates. It is essential to have this document along with",
-        "reference_answer": "DZ",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. The Carte de Circulation Internationale (CCI) is the international registration certificate for a vehicle in Algeria.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct. The international registration letters for a vehicle from Algeria are indeed \"DZ\".",
-            "openai/chatgpt-4o-latest": "False.\n\nThe candidate's response provides information about the \"Carte de Circulation Internationale\" (CCI) and the 1968 Convention on Road Traffic, but it does not directly answer the question. The question asks for the international registration letters of a vehicle from Algeria, which is \"DZ.\" The candidate's response does not mention \"DZ\" and instead focuses on unrelated details about vehicle documentation. Therefore, the response is incorrect."
+        "question": "This singer of A Rather Blustery Day also voiced what hedgehog?",
+        "candidate_response": "The singer of \"A Rather Blustery Day\" is Sterling Holloway. He also voiced the character of Amos the Mouse in the Disney animated film \"The Wind in the Willows.\" However, if you're referring to a hedgehog character, it's important to note that Sterling Holloway did not voice a hedgehog character. The confusion might arise because he is well-known for voicing Winnie the Pooh, and \"A Rather Blustery Day\" is a song from the Winnie the Pooh franchise. If you have a specific hedgehog character in mind, please provide more details.",
+        "reference_answer": "Sonic",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The provided answer discusses Sterling Holloway and his voice roles, but it does not mention Sonic the Hedgehog, which is the reference answer. Therefore, the provided answer is incorrect."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly states that Sterling Holloway did not voice a hedgehog character, but the Reference Answer indicates that he voiced Sonic the Hedgehog."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     },
     {
-        "question": "How did Jock die in Dallas?",
-        "candidate_response": "In the television series \"Dallas,\" Jock Ewing, portrayed by actor Jim Davis, did not die. The character was a central figure in the show and continued until the end of its original run. However, in the 2012 revival series, Jock does appear, but only through flashbacks as he passed away before the events of the revival. The character John Ross Ewing, Jock's grandson, is the focus of the revival series.",
-        "reference_answer": "Helicopter accident",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The candidate's response is incorrect. In the original series of Dallas, Jock Ewing did not die in a helicopter accident. He was portrayed as alive until the series ended in 1991. The helicopter accident occurred in the 2012 revival series, not in the original series.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because Jock Ewing, the patriarch of the Ewing family, actually died in a helicopter accident in the original series \"Dallas\". This is a well-known plot point in the show's history. The candidate's response incorrectly states that Jock did not die, and also incorrectly states that he appeared in the 2012 revival series through flashbacks, when in fact he was already deceased before the events of the revival.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe candidate's response is incorrect. In the original \"Dallas\" series, Jock Ewing, portrayed by Jim Davis, dies in a helicopter crash. This was written into the show after Jim Davis, the actor who played Jock, passed away in real life in 1981. The candidate's response incorrectly states that Jock did not die and continues until the end of the original run, which is not accurate."
+        "question": "Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?",
+        "candidate_response": "The Apple Remote was originally designed to interact with Apple's Front Row software, which provided a media center-like interface for navigating and playing content on a Mac. However, there are other devices and methods that can control similar functionalities:\n\n1. **iPhone or iPad with the Apple TV Remote App**: Apple's Remote app for iOS devices can control Apple TV, which has similar media playback functionalities to Front Row.\n\n2. **Siri Remote**: The Siri Remote is designed for Apple TV and can control media playback, navigate menus, and use voice commands.\n\n3. **Third-party Remotes**: Some third-party universal remotes, like those from Logitech",
+        "reference_answer": "keyboard function keys",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Reference Answer specifies \"keyboard function keys\" as the other device that can control the program Apple Remote was originally designed to interact with. The Provided Answer lists various devices and methods that can control media playback functionalities similar to Front Row, but it does not mention keyboard function keys. Therefore, the Provided Answer is incorrect."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer mentions devices like the iPhone, iPad, Siri Remote, and third-party remotes that can control similar functionalities to Apple's Front Row software. However, the Reference Answer specifically states that the Apple Remote was originally designed to interact with Apple's Front Row software and mentions keyboard function keys as another device that can control the program. Since the Provided Answer does not mention keyboard function keys, it does not fully address the question and is therefore incorrect."
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "False"
     },
     {
-        "question": "What star sign is Michael Caine?",
-        "candidate_response": "Michael Caine was born on March 14, 1933, making his star sign Pisces.",
-        "reference_answer": "Pisces",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. Michael Caine was born on March 14, and Pisces is the star sign for those born between February 19 and March 20. So, Michael Caine's star sign is indeed Pisces.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nMichael Caine was born on March 14, 1933. According to the zodiac calendar, people born between March 21 and April 19 are Aries, and those born between April 20 and May 20 are Taurus. Since March 14 falls between these dates, Michael Caine's star sign is actually Aries, not Pisces.",
-            "openai/chatgpt-4o-latest": "True.\n\nMichael Caine was born on March 14, 1933, and individuals born between February 19 and March 20 fall under the star sign Pisces. Therefore, the candidate's response is correct."
+        "question": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",
+        "candidate_response": "To determine which performance act has a higher instrument-to-person ratio, we need to consider the typical lineup and instrumentation of each act.\n\n**Badly Drawn Boy:**\n- Badly Drawn Boy is primarily the stage name of Damon Gough, a singer-songwriter who often performs solo.\n- When performing solo, he typically uses multiple instruments, including guitars, keyboards, and various percussion instruments.\n- In a solo performance, the instrument-to-person ratio can be quite high since one person is playing multiple instruments.\n\n**Wolf Alice:**\n- Wolf Alice is a four-piece band consisting of Ellie Rowsell (vocals, guitar",
+        "reference_answer": "Badly Drawn Boy",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True.\n\nExplanation: The Provided Answer correctly identifies that Badly Drawn Boy has a higher instrument-to-person ratio compared to Wolf Alice. This is because Badly Drawn Boy is primarily a solo act where one person plays multiple instruments, leading to a higher ratio. Wolf Alice, on the other hand, is a four-piece band where the instruments are distributed among the members, resulting in a lower instrument-to-person ratio."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer correctly identifies Badly Drawn Boy as having a higher instrument-to-person ratio due to the fact that Damon Gough often performs solo and plays multiple instruments. However, the Provided Answer does not mention Wolf Alice's instrumentation or the fact that they are a four-piece band, which would also contribute to their instrument-to-person ratio. Therefore, the comparison is incomplete and the Provided Answer cannot be deemed as fully correct."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Who wrote the novel Evening Class?",
-        "candidate_response": "\"Evening Class\" is a novel by British writer J.G. Ballard, published in 1964. It is a collection of five novellas that focus on the themes of alienation, sexuality, and modernity in post-World War II England. The novellas in the collection are \"The Enormous Space,\" \"The 450-Million-Year-Old Man,\" \"The Drowned Giant,\" \"The Thin Red Line,\" and \"The Overloaded Man.\" In these stories, Ballard explores the psychological effects of technology, war, and urbanization on individuals and society.",
-        "reference_answer": "Maeve Binchy",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The novel \"Evening Class\" was not written by Maeve Binchy. It was written by J.G. Ballard, as stated in the candidate's response. Maeve Binchy is a different author, known for novels such as \"Circle of Friends\" and \"Tara Road.\"",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because the novel \"Evening Class\" was actually written by Maeve Binchy, not J.G. Ballard.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe novel *Evening Class* was written by Maeve Binchy, not J.G. Ballard. The candidate's response incorrectly attributes the novel to J.G. Ballard and provides details about a different work entirely. *Evening Class* is a contemporary novel by Binchy, focusing on a group of people attending an Italian evening class, whereas the works of J.G. Ballard often explore themes of dystopia, technology, and psychological effects of modernity."
+        "question": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+        "candidate_response": "Kasper Schmeichel's father, Peter Schmeichel, was voted the World's Best Goalkeeper by the International Federation of Football History & Statistics (IFFHS) in 1992. Peter Schmeichel is considered one of the greatest goalkeepers in the history of football, known for his time with Manchester United and the Danish national team.",
+        "reference_answer": "World's Best Goalkeeper",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly states that Peter Schmeichel, the father of Kasper Schmeichel, was voted the World's Best Goalkeeper by the IFFHS in 1992, which matches the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly states that Peter Schmeichel was voted the World's Best Goalkeeper by the IFFHS in 1992, which matches the Reference Answer of \"World's Best Goalkeeper\". This information is a verifiable fact in the world of football history."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "True"
     },
     {
-        "question": "Which country does the airline Air Pacific come from?",
-        "candidate_response": "Air Pacific is the former national airline of Fiji. It was rebranded as Fiji Airways in 2013. The airline operates domestic and international flights to a number of destinations in the South Pacific and beyond.",
-        "reference_answer": "Fiji",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Air Pacific was the former national airline of Fiji, and it was rebranded as Fiji Airways in 2013.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct. Air Pacific was indeed the former national airline of Fiji, and it was rebranded as Fiji Airways in 2013. The airline operates domestic and international flights to various destinations in the South Pacific and beyond, as stated in the reference answer.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. Air Pacific was indeed the former national airline of Fiji, and it was rebranded as Fiji Airways in 2013. The airline operates both domestic and international flights. Therefore, the country associated with Air Pacific is Fiji."
+        "question": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
+        "candidate_response": "The song \"These Boots Are Made for Walkin'\" was written by Lee Hazlewood. However, Hazlewood did not die in 2007; he passed away in 2007. The song was famously recorded by Nancy Sinatra in 1966. If you're referring to someone else who died in 2007 and is related to the song, please provide more context.",
+        "reference_answer": "Barton Lee Hazlewood",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "**Judgment: True**\n\n**Explanation:** The Provided Answer correctly identifies Lee Hazlewood as the writer of \"These Boots Are Made for Walkin'\" and states that he passed away in 2007, which matches the Reference Answer. Therefore, the Provided Answer is accurate."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer incorrectly states that Lee Hazlewood passed away in 2007, when in fact he died in 2007. The rest of the information provided is accurate."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "In which branch of the arts does Allegra Kent work?",
-        "candidate_response": "Allegra Kent is a former principal ballerina of the New York City Ballet, so she works in the field of ballet, which is a branch of dance arts.",
-        "reference_answer": "Ballet",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Allegra Kent is indeed a former principal ballerina, and ballet is a branch of dance arts.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct because Allegra Kent is indeed a former principal ballerina of the New York City Ballet, which is a renowned ballet company. This confirms that she works in the field of ballet, a branch of the dance arts.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. Allegra Kent is indeed a former principal ballerina of the New York City Ballet, which places her in the field of ballet, a branch of the dance arts. The candidate accurately identifies her field of work."
+        "question": "The 2011–12 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",
+        "candidate_response": "Virginia Commonwealth University (VCU) was founded in 1968. It was created by the merger of the Medical College of Virginia (founded in 1838) and the Richmond Professional Institute (founded in 1917).",
+        "reference_answer": "1838",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer states that Virginia Commonwealth University (VCU) was founded in 1968, while the Reference Answer indicates that the correct founding year is 1838. The Provided Answer mentions the merger in 1968 but does not align with the specific founding year of the Medical College of Virginia, which is the basis for the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "unsafe\nS2"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer states that Virginia Commonwealth University was founded in 1968, while the Reference Answer states that it was founded in 1838. Since the Reference Answer is the correct founding year of VCU, the Provided Answer is incorrect."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Who had a 70s No 1 hit with Billy, Don't Be A Hero?",
-        "candidate_response": "Boomtown Rats, the Irish rock band, had a No. 1 hit in the United Kingdom in 1978 with \"Billy, Don't Be a Hero.\" The song was written by Bob Geldof, the lead vocalist of the Boomtown Rats, and became an international success. The song is a cover of a 1977 hit by Paper Lace, but the version by the Boomtown Rats is far better known.",
-        "reference_answer": "Bo Donaldson & The Heywoods",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "False. The Boomtown Rats did have a No. 1 hit with \"Billy, Don't Be a Hero,\" but the question asked for the original artist, which was Bo Donaldson & The Heywoods in 1974. The Boomtown Rats' version was a cover of the original.",
-            "meta-llama/llama-3.1-8b-instruct": "False.\n\nThe candidate's response is incorrect because the Boomtown Rats did not have a No. 1 hit with \"Billy, Don't Be a Hero\". The correct answer is Bo Donaldson & The Heywoods, who had a 1974 No. 1 hit with the song.",
-            "openai/chatgpt-4o-latest": "False.\n\nThe candidate's response is incorrect. \"Billy, Don't Be A Hero\" was a hit in the 1970s, but it was not performed by the Boomtown Rats. The song was originally recorded by Paper Lace, a British band, and became a No. 1 hit in the UK in 1974. In the United States, the version by Bo Donaldson & The Heywoods reached No. 1 on the Billboard Hot 100 in 1974. The Boomtown Rats had no connection to this song, and it was not written by Bob Geldof."
+        "question": "Are both Dictyosperma, and Huernia described as a genus?",
+        "candidate_response": "Yes, both Dictyosperma and Huernia are described as genera.\n\n1. **Dictyosperma**: This is a genus of palm trees. The most well-known species in this genus is likely Dictyosperma album, commonly known as the Princess Palm or Hurricane Palm.\n\n2. **Huernia**: This is a genus of small succulent plants native to Africa and the Arabian Peninsula. They are known for their unique, often star-shaped flowers and are part of the family Apocynaceae.\n\nEach genus encompasses a group of related species that share certain characteristics.",
+        "reference_answer": "yes",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly states that both Dictyosperma and Huernia are described as genera, aligning with the Reference Answer. The additional information about each genus is accurate and relevant, supporting the claim."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": ""
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nBoth Dictyosperma and Huernia are indeed described as genera in the plant kingdom. The Provided Answer accurately states that both are genera, which aligns with the Reference Answer."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "False"
+        "target": "True"
     },
     {
-        "question": "Banting and Best pioneered the use of what?",
-        "candidate_response": "Banting and Best are known for their pioneering work in the field of medicine, particularly for their development of insulin therapy for the treatment of diabetes. In 1921, they discovered a way to extract insulin from the pancreas of animals and successfully used it to treat a diabetic patient, a 14-year-old boy named Leonard Thompson. This breakthrough marked a significant milestone in the management of diabetes and saved countless lives. The discovery earned them the Nobel Prize in Physiology or Medicine in 1923.",
-        "reference_answer": "Insulin",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Frederick Banting and John Macleod, along with Charles Best, were indeed pioneers in the development of insulin therapy for the treatment of diabetes. They successfully extracted insulin from the pancreas of animals and used it to treat a diabetic patient, which marked a significant milestone in the management of diabetes. The discovery earned them the Nobel Prize in Physiology or Medicine in 1923.",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response accurately identifies Banting and Best as the pioneers who developed insulin therapy for the treatment of diabetes, which is a well-documented historical fact.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. Banting and Best are indeed known for their pioneering work in the discovery and development of insulin therapy for the treatment of diabetes. They successfully extracted insulin from the pancreas of animals and used it to treat a diabetic patient, which was a groundbreaking achievement in medical science. The response provides accurate details about their work and its significance."
+        "question": "Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?",
+        "candidate_response": "The industrialist you're referring to is Henry J. Kaiser, who indeed became known as the \"father of modern American shipbuilding.\" Kaiser founded the Kaiser Shipyards, which played a significant role in World War II by mass-producing Liberty ships and other vessels. His innovative approach to shipbuilding, including the use of assembly line techniques and prefabrication, revolutionized the industry. Although he is more famously associated with Kaiser Shipyards, Kaiser also ventured into various other industries, including aluminum, steel, and healthcare, under the umbrella of Kaiser Industries Corporation.",
+        "reference_answer": "Henry J. Kaiser",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "True",
+                "explanation": "True. The Provided Answer correctly identifies Henry J. Kaiser as the industrialist known as the \"father of modern American shipbuilding\" and provides accurate details about his contributions to the shipbuilding industry and other ventures."
+            },
+            "judge-llama": {
+                "verdict": "Ambiguous",
+                "explanation": "safe"
+            },
+            "judge-openai": {
+                "verdict": "True",
+                "explanation": "True\n\nThe Provided Answer correctly identifies Henry J. Kaiser as the American industrialist known as the father of modern American shipbuilding. It also mentions his founding of Kaiser Shipyards and his innovative approach to shipbuilding, which revolutionized the industry. The information provided aligns with historical facts about Henry J. Kaiser's contributions to shipbuilding and other industries."
+            },
+            "user": {
+                "verdict": "True",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "True"
     },
     {
-        "question": "Who directed the movie La Dolce Vita?",
-        "candidate_response": "The movie \"La Dolce Vita\" was directed by Federico Fellini. It's an Italian film that was released in 1960, and it's considered one of the most famous works of the Italian filmmaker. The movie offers a satirical look at the lifestyles of the rich and famous in Rome during the 1950s and 1960s.",
-        "reference_answer": "Federico Fellini",
-        "verdicts": {
-            "mistralai/mistral-7b-instruct:free": "True. The candidate's response is correct. Federico Fellini directed the movie \"La Dolce Vita.\"",
-            "meta-llama/llama-3.1-8b-instruct": "True.\n\nThe candidate's response is correct because Federico Fellini is indeed the director of the movie \"La Dolce Vita\", which was released in 1960 and is considered a classic of Italian cinema. The candidate's response accurately identifies the director and provides a brief summary of the movie's content, which is consistent with the film's reputation as a satirical exploration of the lifestyles of the rich and famous in Rome during the 1950s and 1960s.",
-            "openai/chatgpt-4o-latest": "True.\n\nThe candidate's response is correct. Federico Fellini directed the movie \"La Dolce Vita,\" which was released in 1960. The response also provides additional context about the film, which aligns with the reference answer."
+        "question": "What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre?",
+        "candidate_response": "In \"Tunnels and Trolls,\" the adventures are typically referred to as \"solo adventures\" or \"group adventures,\" depending on whether they are designed for a single player or a group of players. These adventures are often published as modules or scenarios that the game master (or \"Trollmaster\") can use to guide the players through a story. Some of the most famous solo adventures include \"Buffalo Castle\" and \"Deathtrap Equalizer Dungeon.\" Each adventure has its own unique title and setting within the world of Tunnels and Trolls.",
+        "reference_answer": "Arena of Khazan",
+        "judge_verdicts": {
+            "judge-mistral": {
+                "verdict": "False",
+                "explanation": "False. The Provided Answer discusses the general types of adventures in \"Tunnels and Trolls\" but does not mention the specific name \"Arena of Khazan,\" which is the Reference Answer."
+            },
+            "judge-llama": {
+                "verdict": "True",
+                "explanation": "True"
+            },
+            "judge-openai": {
+                "verdict": "False",
+                "explanation": "False\n\nExplanation: The Provided Answer does not match the Reference Answer. The name for the adventure in \"Tunnels and Trolls\" that was mentioned in the Reference Answer is \"Arena of Khazan,\" not \"solo adventures\" or \"group adventures.\""
+            },
+            "user": {
+                "verdict": "False",
+                "explanation": "User provided verdict."
+            }
         },
-        "final_verdict": "True"
+        "target": "False"
     }
 ]
