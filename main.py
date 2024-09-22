@@ -40,7 +40,7 @@ def get_candidate_response(question, model_name="mistralai/mistral-7b-instruct:f
         model=model_name,
         messages=[{"role": "user", "content": question}],
         max_tokens=150,
-        temperature=0.7,
+        temperature=0.001,
     )
     candidate_response = response.choices[0].message.content.strip()
     return candidate_response
